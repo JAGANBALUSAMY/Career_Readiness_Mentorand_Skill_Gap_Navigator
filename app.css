@@ -1,0 +1,200 @@
+/* ===============================
+   GLOBAL BASE
+=============================== */
+
+html, body {
+  background:#f4f6fc !important;
+  font-family: "Inter", system-ui, -apple-system, Arial;
+}
+
+.block-container {
+  padding-top: 1.5rem !important;
+  padding-bottom: 2rem !important;
+  max-width: 1250px !important;
+}
+
+[data-testid="stVerticalBlock"] {
+  overflow: visible !important;
+}
+
+div[data-testid="column"] {
+  min-width: 300px !important;
+}
+
+/* ===============================
+   SIDEBAR
+=============================== */
+
+section[data-testid="stSidebar"] {
+  background:black;
+  border-right:1px solid #e6e8ef;
+  color:white;
+}
+
+section[data-testid="stSidebar"] .stButton button {
+
+  width:100%;
+}
+
+/* ===============================
+   HEADER CARD
+=============================== */
+
+.header-card {
+  background:white;
+  border-radius:14px;
+  padding:22px;
+  border:1px solid #e3e8f2;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+  margin-bottom:20px;
+}
+
+/* ===============================
+   CONTENT CARDS
+=============================== */
+
+.card {
+  background:white;
+  border-radius:14px;
+  padding:18px 20px;
+  border:1px solid #e6e9ef;
+  box-shadow:0 6px 18px rgba(0,0,0,.05);
+  margin-bottom:18px;
+}
+
+/* ===============================
+   TABS
+=============================== */
+
+div[role="tablist"] {
+  border-bottom:1px solid #e0e3ea;
+  margin-bottom:12px;
+}
+
+div[role="tab"] {
+  border-radius:8px 8px 0 0 !important;
+  padding:10px 18px !important;
+  font-weight:600;
+  border:1px solid #dfe2ea !important;
+  border-bottom:none !important;
+  background:#f6f7fb !important;
+  color:#333 !important;
+  margin-right:6px;
+}
+
+div[role="tab"][aria-selected="true"] {
+  background:#2563eb !important;
+  color:white !important;
+  border-color:#2563eb !important;
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+
+.stButton > button {
+  background:#2563eb !important;
+  color:white !important;
+  border-radius:10px;
+  padding:9px 18px;
+  font-weight:600;
+  border:none;
+  transition: all .2s ease;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.stButton > button:hover {
+  background:#1746b3 !important;
+  transform: translateY(-1px);
+}
+
+.stButton > button:active {
+  transform: scale(.98);
+}
+
+/* DOWNLOAD BUTTONS */
+
+.stDownloadButton > button {
+  background:#10b981 !important;
+  color:white !important;
+  border-radius:10px !important;
+  border:none !important;
+}
+
+/* ===============================
+   INPUTS
+=============================== */
+
+input, textarea, select {
+  border-radius:10px !important;
+  border:1px solid #cfd6e6 !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color:#2563eb !important;
+  box-shadow:0 0 0 2px rgba(37,99,235,.25) !important;
+}
+
+/* ===============================
+   METRICS
+=============================== */
+
+.stMetric {
+  padding:12px;
+  border-radius:14px;
+  border:1px solid #e6e9ef;
+  box-shadow:0 8px 16px rgba(0,0,0,.05);
+}
+
+/* ===============================
+   CHAT STYLING
+=============================== */
+
+.user-bubble {
+  background:#e8f1ff;
+  color: black;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:10px;
+}
+
+/* Make bot bubbles scrollable when content is too long */
+.bot-bubble {
+  background: #f8f9fa;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:10px;
+  border-left: 4px solid #2563eb;
+  color: #212529 !important;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar styling for bot bubbles */
+.bot-bubble::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bot-bubble::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.bot-bubble::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.bot-bubble::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media (max-width: 900px){
+  .block-container { padding: 1rem !important; }
+  div[data-testid="column"] { min-width:100% !important; }
+  div[role="tab"] { font-size:13px; }
+}
