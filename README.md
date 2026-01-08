@@ -155,37 +155,37 @@ The platform uses 7 specialized AI agents:
 
 ### 🤖 AI / ML
 
-![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black) 
-![LangChain](https://img.shields.io/badge/LangChain-Framework-blue) 
-![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple) 
+![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black)&nbsp;&nbsp;
+![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)&nbsp;&nbsp;
+![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple)
 
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange) 
+![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)&nbsp;&nbsp;
 ![SentenceTransformers](https://img.shields.io/badge/Sentence%20Transformers-Embeddings-green)
 
 
 ### ⚙️ Backend
 
-![Python](https://img.shields.io/badge/Python-3.11-blue) 
-![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow) 
+![Python](https://img.shields.io/badge/Python-3.11-blue)&nbsp;&nbsp;
+![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow)&nbsp;&nbsp;
 ![Prompt](https://img.shields.io/badge/Prompt%20Engineering-Optimized-lightgrey)
 
 
 ### 🎨 Frontend
 
-![Streamlit](https://img.shields.io/badge/Streamlit-UI-red) 
-![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet) 
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)&nbsp;&nbsp;
+![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet)&nbsp;&nbsp;
 ![Plotly](https://img.shields.io/badge/Plotly-Visualization-darkblue)
 
 
 ### 📊 Data Processing
 
-![Pandas](https://img.shields.io/badge/Pandas-Data-orange) 
-![PDF](https://img.shields.io/badge/PDF-Parsing-red) 
+![Pandas](https://img.shields.io/badge/Pandas-Data-orange)&nbsp;&nbsp;
+![PDF](https://img.shields.io/badge/PDF-Parsing-red)&nbsp;&nbsp;
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web%20Scraping-green)
 
 ### 📄 Export
 
-![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue) 
+![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue)&nbsp;&nbsp;
 ![CSV](https://img.shields.io/badge/Export-TXT%20%7C%20CSV-lightgrey)
 
 </div>
