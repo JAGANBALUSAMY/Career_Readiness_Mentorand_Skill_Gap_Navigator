@@ -152,11 +152,13 @@ The platform uses 7 specialized AI agents:
 
 ## 🛠️ Technology Stack
 <div align="center">
+
 ### 🤖 AI / ML
 
 ![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black) 
 ![LangChain](https://img.shields.io/badge/LangChain-Framework-blue) 
 ![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple) 
+
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange) 
 ![SentenceTransformers](https://img.shields.io/badge/Sentence%20Transformers-Embeddings-green)
 
@@ -181,7 +183,6 @@ The platform uses 7 specialized AI agents:
 ![PDF](https://img.shields.io/badge/PDF-Parsing-red) 
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web%20Scraping-green)
 
----
 ### 📄 Export
 
 ![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue) 
