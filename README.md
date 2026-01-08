@@ -155,37 +155,37 @@ The platform uses 7 specialized AI agents:
 
 ### 🤖 AI / ML
 
-![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black)&nbsp;&nbsp;
-![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)&nbsp;&nbsp;
+![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black)&nbsp;&nbsp;&nbsp;&nbsp;
+![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)&nbsp;&nbsp;&nbsp;&nbsp;
 ![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple)
 
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)&nbsp;&nbsp;
+![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)&nbsp;&nbsp;&nbsp;&nbsp;
 ![SentenceTransformers](https://img.shields.io/badge/Sentence%20Transformers-Embeddings-green)
 
 
 ### ⚙️ Backend
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)&nbsp;&nbsp;
-![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow)&nbsp;&nbsp;
+![Python](https://img.shields.io/badge/Python-3.11-blue)&nbsp;&nbsp;&nbsp;&nbsp;
+![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow)&nbsp;&nbsp;&nbsp;&nbsp;
 ![Prompt](https://img.shields.io/badge/Prompt%20Engineering-Optimized-lightgrey)
 
 
 ### 🎨 Frontend
 
-![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)&nbsp;&nbsp;
-![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet)&nbsp;&nbsp;
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)&nbsp;&nbsp;&nbsp;&nbsp;
+![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet)&nbsp;&nbsp;&nbsp;&nbsp;
 ![Plotly](https://img.shields.io/badge/Plotly-Visualization-darkblue)
 
 
 ### 📊 Data Processing
 
-![Pandas](https://img.shields.io/badge/Pandas-Data-orange)&nbsp;&nbsp;
-![PDF](https://img.shields.io/badge/PDF-Parsing-red)&nbsp;&nbsp;
+![Pandas](https://img.shields.io/badge/Pandas-Data-orange)&nbsp;&nbsp;&nbsp;&nbsp;
+![PDF](https://img.shields.io/badge/PDF-Parsing-red)&nbsp;&nbsp;&nbsp;&nbsp;
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web%20Scraping-green)
 
 ### 📄 Export
 
-![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue)&nbsp;&nbsp;
+![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue)&nbsp;&nbsp;&nbsp;&nbsp;
 ![CSV](https://img.shields.io/badge/Export-TXT%20%7C%20CSV-lightgrey)
 
 </div>
@@ -333,11 +333,9 @@ See the [LICENSE](LICENSE) file for details.
 
 ### Jagan B
 
-| ECE Graduate | AI Enthusiast |
-
-[![GitHub](https://img.shields.io/badge/GitHub-JAGANBALUSAMY-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JAGANBALUSAMY)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jagan-b-1aa945323)
-[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jaganbalusamy@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-JAGANBALUSAMY-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JAGANBALUSAMY)&nbsp;&nbsp;&nbsp;&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jagan-b-1aa945323)&nbsp;&nbsp;&nbsp;&nbsp;
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jaganbalusamy@gmail.com)&nbsp;&nbsp;&nbsp;&nbsp;
 
 </div>
 
