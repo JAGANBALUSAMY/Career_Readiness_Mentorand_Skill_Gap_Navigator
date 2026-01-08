@@ -99,30 +99,88 @@ It is intended for learning, experimentation, and portfolio demonstration.
 8. Results are exported as PDF / TXT / CSV
 9. Session data is cached for analytics and reuse
 
-### 🤖 Multi-Agent System
+### 📊 Architecture Diagram
 
-The platform uses 7 specialized AI agents:
-
-- **🧾 Resume Optimizer**
-  → Improves ATS compatibility , Injects job-specific keywords
-
-- **💌 Cover Letter Agent**
-  → Generates personalized cover letters , Aligns tone with role and company
-
-- **🎯 Interview Preparation Agent**
-  → Generates STAR-based Q&A , Focuses on role-specific scenarios
-
-- **🧠 Skill Gap Analyzer**
-  → Compares resume skills with job requirements , Suggests learning roadmap
-
-- **🔗 LinkedIn Optimizer**
-  → Improves headline and About section , Enhances recruiter visibility
-
-- **✉️ Email Generator**
-  → Creates professional follow-up and outreach emails
-
-- **🗣️ Career Coach Agent**
-  → Provides conversational career guidance , Maintains session context
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              USER INTERFACE                                 │
+│                          ┌─────────────────┐                              │
+│                          │   STREAMLIT UI  │                              │
+│                          │                 │                              │
+│                          │ • Input Forms   │                              │
+│                          │ • Results View  │                              │
+│                          │ • Analytics     │                              │
+│                          └─────────────────┘                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           ORCHESTRATION LAYER                               │
+│                          ┌─────────────────┐                              │
+│                          │ SESSION MANAGER │                              │
+│                          │ WORKFLOW ROUTER │                              │
+│                          │ ERROR HANDLER   │                              │
+│                          └─────────────────┘                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        INPUT PROCESSING                                     │
+│         ┌─────────────────┐           ┌─────────────────┐                 │
+│         │   PDF PARSER    │           │   WEB SCRAPER   │                 │
+│         │                 │           │                 │                 │
+│         │ • pdfplumber    │           │ • BeautifulSoup │                 │
+│         │ • PyPDF2        │           │ • Requests      │                 │
+│         └─────────────────┘           └─────────────────┘                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        MULTI-AGENT SYSTEM                                 │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐        │
+│  │RESUME OPT   │ │SKILL GAP    │ │INTERVIEW    │ │CAREER COACH │        │
+│  │AGENT        │ │ANALYZER     │ │PREP AGENT   │ │AGENT        │        │
+│  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘        │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐        │
+│  │COVER LETTER │ │LINKEDIN     │ │EMAIL        │ │OTHER AGENTS │        │
+│  │AGENT        │ │OPTIMIZER    │ │GENERATOR    │ │             │        │
+│  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘        │
+└─────────────────────────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           LANGCHAIN LAYER                                   │
+│                      ┌──────────────────────┐                             │
+│                      │ • PROMPT TEMPLATES   │                             │
+│                      │ • CHAIN COMPOSITION  │                             │
+│                      │ • CONVERSATION MEMORY│                             │
+│                      │ • AGENT ORCHESTRATION│                             │
+│                      └──────────────────────┘                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           RAG & LLM LAYER                                   │
+│         ┌─────────────────┐           ┌─────────────────┐                 │
+│         │  VECTOR STORE   │           │    GROQ LLM     │                 │
+│         │   (ChromaDB)    │    ↔      │  (LLaMA 3)      │                 │
+│         │ • Embeddings    │           │ • Generation    │                 │
+│         │ • Similarity    │           │ • Reasoning     │                 │
+│         │ • Retrieval     │           │ • Analysis      │                 │
+│         └─────────────────┘           └─────────────────┘                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          OUTPUT PROCESSING                                  │
+│         ┌─────────────────┐           ┌─────────────────┐                 │
+│         │   PDF EXPORT    │           │   ANALYTICS     │                 │
+│         │                 │           │                 │                 │
+│         │ • ReportLab     │           │ • Performance   │                 │
+│         │ • Formatting    │           │ • Tracking      │                 │
+│         └─────────────────┘           └─────────────────┘                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
