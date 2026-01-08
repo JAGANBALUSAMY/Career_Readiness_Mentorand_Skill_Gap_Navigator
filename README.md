@@ -154,38 +154,38 @@ The platform uses 7 specialized AI agents:
 
 ### 🤖 AI / ML
 
-![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black)&nbsp;&nbsp;&nbsp;&nbsp;
-![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)&nbsp;&nbsp;&nbsp;&nbsp;
-![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple)
+[![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black)](https://groq.com)&nbsp;&nbsp;&nbsp;&nbsp;
+[![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)](https://langchain.com)&nbsp;&nbsp;&nbsp;&nbsp;
+[![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple)](https://www.promptingguide.ai/techniques/rag)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)&nbsp;&nbsp;&nbsp;&nbsp;
-![SentenceTransformers](https://img.shields.io/badge/Sentence%20Transformers-Embeddings-green)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)](https://www.trychroma.com)&nbsp;&nbsp;&nbsp;&nbsp;
+[![SentenceTransformers](https://img.shields.io/badge/Sentence%20Transformers-Embeddings-green)](https://www.sbert.net)
 
 
 ### ⚙️ Backend
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)&nbsp;&nbsp;&nbsp;&nbsp;
-![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow)&nbsp;&nbsp;&nbsp;&nbsp;
-![Prompt](https://img.shields.io/badge/Prompt%20Engineering-Optimized-lightgrey)
+[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org)&nbsp;&nbsp;&nbsp;&nbsp;
+[![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow)](https://en.wikipedia.org/wiki/Multi-agent_system)&nbsp;&nbsp;&nbsp;&nbsp;
+[![Prompt](https://img.shields.io/badge/Prompt%20Engineering-Optimized-lightgrey)](https://www.promptingguide.ai)
 
 
 ### 🎨 Frontend
 
-![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)&nbsp;&nbsp;&nbsp;&nbsp;
-![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet)&nbsp;&nbsp;&nbsp;&nbsp;
-![Plotly](https://img.shields.io/badge/Plotly-Visualization-darkblue)
+[![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)](https://streamlit.io)&nbsp;&nbsp;&nbsp;&nbsp;
+[![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet)](https://developer.mozilla.org/en-US/docs/Web/CSS)&nbsp;&nbsp;&nbsp;&nbsp;
+[![Plotly](https://img.shields.io/badge/Plotly-Visualization-darkblue)](https://plotly.com)
 
 
 ### 📊 Data Processing
 
-![Pandas](https://img.shields.io/badge/Pandas-Data-orange)&nbsp;&nbsp;&nbsp;&nbsp;
-![PDF](https://img.shields.io/badge/PDF-Parsing-red)&nbsp;&nbsp;&nbsp;&nbsp;
-![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web%20Scraping-green)
+[![Pandas](https://img.shields.io/badge/Pandas-Data-orange)](https://pandas.pydata.org)&nbsp;&nbsp;&nbsp;&nbsp;
+[![PDF](https://img.shields.io/badge/PDF-Parsing-red)](https://pypi.org/project/pypdf/)&nbsp;&nbsp;&nbsp;&nbsp;
+[![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web%20Scraping-green)](https://beautiful-soup-4.readthedocs.io)
 
 ### 📄 Export
 
-![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue)&nbsp;&nbsp;&nbsp;&nbsp;
-![CSV](https://img.shields.io/badge/Export-TXT%20%7C%20CSV-lightgrey)
+[![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue)](https://www.reportlab.com)&nbsp;&nbsp;&nbsp;&nbsp;
+[![CSV](https://img.shields.io/badge/Export-TXT%20%7C%20CSV-lightgrey)](https://docs.python.org/3/library/csv.html)
 
 ---
 
