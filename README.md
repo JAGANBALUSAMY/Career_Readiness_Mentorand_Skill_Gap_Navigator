@@ -191,9 +191,15 @@ The platform uses 7 specialized AI agents:
 
 ### 📋 Prerequisites
 
-- Python 3.11+
-- Groq API key
-- Git
+<div align="center">
+
+| Requirement | Version | Download / Get |
+|:------------|:--------|:---------------|
+| **Python** | 3.11+ | [python.org](https://www.python.org/downloads/) |
+| **Groq API Key** | Free tier | [console.groq.com](https://console.groq.com/keys) |
+| **Git** | Latest | [git-scm.com](https://git-scm.com/downloads) |
+
+</div>
 
 ### ⚙️ Installation
 
@@ -351,7 +357,7 @@ See the [LICENSE](LICENSE) file for details.
 
 ### ⭐ Star this repository if you find it useful!
 
-**Built with ❤️ by Jagan B | AI Portfolio Project**
+**Built by Jagan B**
 
 [![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jagan-b-1aa945323)
 
