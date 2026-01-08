@@ -151,7 +151,6 @@ The platform uses 7 specialized AI agents:
 ---
 
 ## 🛠️ Technology Stack
-<div align="center">
 
 ### 🤖 AI / ML
 
@@ -159,7 +158,7 @@ The platform uses 7 specialized AI agents:
 ![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)&nbsp;&nbsp;&nbsp;&nbsp;
 ![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple)
 
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)&nbsp;&nbsp;&nbsp;&nbsp;
 ![SentenceTransformers](https://img.shields.io/badge/Sentence%20Transformers-Embeddings-green)
 
 
@@ -187,8 +186,6 @@ The platform uses 7 specialized AI agents:
 
 ![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue)&nbsp;&nbsp;&nbsp;&nbsp;
 ![CSV](https://img.shields.io/badge/Export-TXT%20%7C%20CSV-lightgrey)
-
-</div>
 
 ---
 
