@@ -159,31 +159,30 @@ The platform uses 7 specialized AI agents:
 ## 🛠️ Technology Stack
 
 ### 🤖 AI / ML
-- Groq (LLaMA 3)
-- LangChain
-- Retrieval-Augmented Generation (RAG)
-- ChromaDB
-- Sentence Transformers
+![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black)
+![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)
+![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)
+![SentenceTransformers](https://img.shields.io/badge/Sentence%20Transformers-Embeddings-green)
 
 ### ⚙️ Backend
-- Python 3.11
-- Multi-agent architecture
-- Prompt engineering
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow)
+![Prompt](https://img.shields.io/badge/Prompt%20Engineering-Optimized-lightgrey)
 
 ### 🎨 Frontend
-- Streamlit
-- Custom CSS
-- Plotly
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)
+![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet)
+![Plotly](https://img.shields.io/badge/Plotly-Visualization-darkblue)
 
 ### 📊 Data Processing
-- Pandas
-- pdfplumber
-- PyPDF2
-- BeautifulSoup4
+![Pandas](https://img.shields.io/badge/Pandas-Data-orange)
+![PDF](https://img.shields.io/badge/PDF-Parsing-red)
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web%20Scraping-green)
 
 ### 📄 Export
-- ReportLab (PDF generation)
-- TXT / CSV export
+![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue)
+![CSV](https://img.shields.io/badge/Export-TXT%20%7C%20CSV-lightgrey)
 
 ---
 
