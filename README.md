@@ -181,7 +181,7 @@ The platform uses 7 specialized AI agents:
 ![PDF](https://img.shields.io/badge/PDF-Parsing-red) 
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web%20Scraping-green)
 
---
+---
 ### 📄 Export
 
 ![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue) 
