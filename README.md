@@ -104,31 +104,31 @@ It is intended for learning, experimentation, and portfolio demonstration.
 The platform uses 7 specialized AI agents:
 
 - **🧾 Resume Optimizer**
-  - Improves ATS compatibility
-  - Injects job-specific keywords
+  → Improves ATS compatibility
+  → Injects job-specific keywords
 
 - **💌 Cover Letter Agent**
-  - Generates personalized cover letters
-  - Aligns tone with role and company
+  → Generates personalized cover letters
+  → Aligns tone with role and company
 
 - **🎯 Interview Preparation Agent**
-  - Generates STAR-based Q&A
-  - Focuses on role-specific scenarios
+  → Generates STAR-based Q&A
+  → Focuses on role-specific scenarios
 
 - **🧠 Skill Gap Analyzer**
-  - Compares resume skills with job requirements
-  - Suggests learning roadmap
+  → Compares resume skills with job requirements
+  → Suggests learning roadmap
 
 - **🔗 LinkedIn Optimizer**
-  - Improves headline and About section
-  - Enhances recruiter visibility
+  → Improves headline and About section
+  → Enhances recruiter visibility
 
 - **✉️ Email Generator**
-  - Creates professional follow-up and outreach emails
+  → Creates professional follow-up and outreach emails
 
 - **🗣️ Career Coach Agent**
-  - Provides conversational career guidance
-  - Maintains session context
+  → Provides conversational career guidance
+  → Maintains session context
 
 ---
 
@@ -159,30 +159,50 @@ The platform uses 7 specialized AI agents:
 ## 🛠️ Technology Stack
 
 ### 🤖 AI / ML
-![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black)
-![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)
-![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange)
+<div align="center">
+
+![Groq](https://img.shields.io/badge/Groq-LLaMA%203-black) 
+![LangChain](https://img.shields.io/badge/LangChain-Framework-blue) 
+![RAG](https://img.shields.io/badge/RAG-Context%20Retrieval-purple) 
+![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange) 
 ![SentenceTransformers](https://img.shields.io/badge/Sentence%20Transformers-Embeddings-green)
 
+</div>
+
 ### ⚙️ Backend
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow)
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.11-blue) 
+![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-yellow) 
 ![Prompt](https://img.shields.io/badge/Prompt%20Engineering-Optimized-lightgrey)
 
+</div>
+
 ### 🎨 Frontend
-![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)
-![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet)
+<div align="center">
+
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-red) 
+![CSS](https://img.shields.io/badge/CSS-Custom-blueviolet) 
 ![Plotly](https://img.shields.io/badge/Plotly-Visualization-darkblue)
 
+</div>
+
 ### 📊 Data Processing
-![Pandas](https://img.shields.io/badge/Pandas-Data-orange)
-![PDF](https://img.shields.io/badge/PDF-Parsing-red)
+<div align="center">
+
+![Pandas](https://img.shields.io/badge/Pandas-Data-orange) 
+![PDF](https://img.shields.io/badge/PDF-Parsing-red) 
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-Web%20Scraping-green)
 
+</div>
+
 ### 📄 Export
-![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue)
+<div align="center">
+
+![ReportLab](https://img.shields.io/badge/ReportLab-PDF-blue) 
 ![CSV](https://img.shields.io/badge/Export-TXT%20%7C%20CSV-lightgrey)
+
+</div>
 
 ---
 
