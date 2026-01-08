@@ -150,12 +150,12 @@ It is intended for learning, experimentation, and portfolio demonstration.
                                                 ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                                        LANGCHAIN LAYER                                          │
-│                        ┌─────────────────────────────────────────────────────────────────┐      │
-│                        │ • PROMPT TEMPLATES                                              │      │
-│                        │ • CHAIN COMPOSITION                                             │      │
-│                        │ • CONVERSATION MEMORY                                           │      │
-│                        │ • AGENT ORCHESTRATION                                           │      │
-│                        └─────────────────────────────────────────────────────────────────┘      │
+│                                   ┌─────────────────────────┐                                   │
+│                                   │ • PROMPT TEMPLATES      │                                   │
+│                                   │ • CHAIN COMPOSITION     │                                   │
+│                                   │ • CONVERSATION MEMORY   │                                   │
+│                                   │ • AGENT ORCHESTRATION   │                                   │
+│                                   └─────────────────────────┘                                   │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
                                                 │
                                                 ▼
