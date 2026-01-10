@@ -60,3 +60,25 @@ class HistoryTracker:
             'companies': list(set(h.get('company', '') for h in history)),
             'roles': list(set(h.get('role', '') for h in history))
         }
+    
+    @classmethod
+    def delete_all_history(cls):
+        """Delete all application history."""
+        cls.initialize()
+        cls.HISTORY_FILE.write_text(json.dumps([]))
+        
+    @classmethod
+    def delete_application(cls, app_id: str):
+        """Delete a specific application by ID."""
+        cls.initialize()
+        history = cls.get_all()
+        history = [h for h in history if h.get('id') != app_id]
+        cls.HISTORY_FILE.write_text(json.dumps(history, indent=2))
+    
+    @classmethod
+    def delete_multiple_applications(cls, app_ids: list):
+        """Delete multiple applications by IDs."""
+        cls.initialize()
+        history = cls.get_all()
+        history = [h for h in history if h.get('id') not in app_ids]
+        cls.HISTORY_FILE.write_text(json.dumps(history, indent=2))

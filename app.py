@@ -54,6 +54,29 @@ except ImportError:
     USE_LANGCHAIN = False
 
 # ============================================================================
+# INITIALIZE SESSION STATE
+# ============================================================================
+
+if 'chat_agent' not in st.session_state:
+    if USE_LANGCHAIN:
+        try:
+            st.session_state.chat_agent = LangChainChatAgent()
+        except:
+            st.session_state.chat_agent = CareerChatAgent()
+    else:
+        st.session_state.chat_agent = CareerChatAgent()
+
+if 'chat_messages' not in st.session_state:
+    st.session_state.chat_messages = []
+
+# Initialize history deletion confirmation state
+if 'confirm_delete_history' not in st.session_state:
+    st.session_state.confirm_delete_history = False
+
+if 'confirm_delete_all' not in st.session_state:
+    st.session_state.confirm_delete_all = False
+
+# ============================================================================
 # PAGE CONFIG
 # ============================================================================
 
@@ -98,17 +121,11 @@ st.markdown("""
     <div style='display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;'>
         <div style='flex:1;min-width:300px;'>
             <h1>🤖 AI Job Assistant PRO</h1>
-            <p>
-                Multi-Agent AI System · LangChain · RAG · Complete Automation Suite
-            </p>
         </div>
         <div style='text-align:right;'>
-            <span class='badge'>Resume Optimizer</span>
-            <span class='badge'>ATS Analysis</span>
-            <span class='badge'>🔗 LangChain</span>
-            <span class='badge'>🧠 RAG</span>
-            <span class='badge'>💬 AI Chat</span>
-            <span class='badge'>📊 Analytics</span>
+            <span class='badge'>Resume Optimizer</span>&nbsp;&nbsp;&nbsp;
+            <span class='badge'>ATS Analysis</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class='badge'>Multi-Agent AI System for Job Applications</span>
         </div>
     </div>
 </div>
@@ -134,6 +151,24 @@ with st.sidebar:
             if not k.startswith('_'):
                 del st.session_state[k]
         st.rerun()
+        
+    if not st.session_state.confirm_delete_history:
+        if st.button("🗑️ Clear History", use_container_width=True):
+            st.session_state.confirm_delete_history = True
+            st.rerun()
+    else:
+        st.warning("Are you sure you want to delete all application history?")
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("Yes, Delete All", type="primary", use_container_width=True):
+                HistoryTracker.delete_all_history()
+                st.success("✅ All application history cleared!")
+                st.session_state.confirm_delete_history = False
+                st.rerun()
+        with col2:
+            if st.button("Cancel", use_container_width=True):
+                st.session_state.confirm_delete_history = False
+                st.rerun()
 
     st.markdown("---")
     
@@ -169,35 +204,6 @@ with st.sidebar:
         st.caption(f"⏱️ {st.session_state.get('processing_time', 0)}s")
     else:
         st.info("💡 No active session")
-    
-    st.markdown("---")
-    
-    st.markdown("### 🔧 Tech Stack")
-    if USE_LANGCHAIN:
-        st.markdown('<span class="badge badge-success">✅ LangChain</span>', unsafe_allow_html=True)
-        st.markdown('<span class="badge badge-success">✅ RAG Active</span>', unsafe_allow_html=True)
-    else:
-        st.markdown('<span class="badge badge-warning">⚠️ LangChain Off</span>', unsafe_allow_html=True)
-    
-    st.markdown(f'<span class="badge badge-secondary">🤖 {settings.MODEL_NAME}</span>', unsafe_allow_html=True)
-    st.markdown(f'<span class="badge badge-secondary">🌡️ Temp: {settings.TEMPERATURE}</span>', unsafe_allow_html=True)
-
-
-# ============================================================================
-# INITIALIZE SESSION STATE
-# ============================================================================
-
-if 'chat_agent' not in st.session_state:
-    if USE_LANGCHAIN:
-        try:
-            st.session_state.chat_agent = LangChainChatAgent()
-        except:
-            st.session_state.chat_agent = CareerChatAgent()
-    else:
-        st.session_state.chat_agent = CareerChatAgent()
-
-if 'chat_messages' not in st.session_state:
-    st.session_state.chat_messages = []
 
 # ============================================================================
 # MAIN TABS - REDESIGNED
@@ -831,69 +837,168 @@ with tab4:
 
 with tab5:
     st.markdown("## 📈 Application Analytics Dashboard")
-    
+
     try:
         hist = HistoryTracker.get_all()
-        
+
         if hist:
             stats = HistoryTracker.get_stats()
-            
-            # Overview Metrics
+
+            # -------------------------
+            # 📊 Overview Metrics
+            # -------------------------
             st.markdown("### 📊 Overview")
             col1, col2, col3, col4 = st.columns(4)
-            
+
             with col1:
-                st.metric("Total Applications", stats['total_applications'])
-            
+                st.metric("Total Applications", stats["total_applications"])
+
             with col2:
                 st.metric("Average ATS Score", f"{stats['avg_ats_score']:.1f}%")
-            
+
             with col3:
-                st.metric("Companies", len(stats['companies']))
-            
+                st.metric("Companies", len(stats["companies"]))
+
             with col4:
-                st.metric("Roles Applied", len(stats['roles']))
-            
+                st.metric("Roles Applied", len(stats["roles"]))
+
             st.markdown("---")
-            
-            # Application History Table
+
+            # -------------------------
+            # 📋 Application History
+            # -------------------------
+            from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode, JsCode
+
             st.markdown("### 📋 Application History")
+
             df = pd.DataFrame(hist)
-            df['timestamp'] = pd.to_datetime(df['timestamp']).dt.strftime('%Y-%m-%d %H:%M')
-            
-            display_df = df[['timestamp', 'company', 'role', 'ats_score', 'processing_time']].copy()
-            display_df.columns = ['Date', 'Company', 'Role', 'ATS Score (%)', 'Processing Time (s)']
-            
-            st.dataframe(
-                display_df,
-                use_container_width=True,
-                hide_index=True
-            )
-            
-            # Download History
-            csv = display_df.to_csv(index=False)
-            st.download_button(
-                "📥 Download Application History (CSV)",
-                csv,
-                file_name=f"application_history_{datetime.now().strftime('%Y%m%d')}.csv",
-                mime="text/csv"
-            )
-        
+
+            if not df.empty:
+                df["timestamp"] = pd.to_datetime(df["timestamp"]).dt.strftime("%Y-%m-%d %H:%M")
+
+                display_df = df[
+                    ["id", "timestamp", "company", "role", "ats_score", "processing_time"]
+                ].copy()
+
+                display_df.columns = [
+                    "ID",
+                    "Date",
+                    "Company",
+                    "Role",
+                    "ATS Score (%)",
+                    "Processing Time (s)",
+                ]
+
+                display_df["ATS Score (%)"] = display_df["ATS Score (%)"].round(1)
+                display_df["Processing Time (s)"] = display_df["Processing Time (s)"].round(2)
+
+                gb = GridOptionsBuilder.from_dataframe(display_df)
+
+                gb.configure_column("ID", hide=True)
+                gb.configure_column("ATS Score (%)", width=120)
+                gb.configure_column("Processing Time (s)", width=150)
+
+                gb.configure_selection("single", use_checkbox=False)
+                gb.configure_grid_options(rowHeight=42)
+
+                grid_options = gb.build()
+
+                grid_response = AgGrid(
+                    display_df,
+                    gridOptions=grid_options,
+                    update_mode=GridUpdateMode.SELECTION_CHANGED,
+                    allow_unsafe_jscode=True,   # 🔴 REQUIRED
+                    theme="streamlit",
+                    fit_columns_on_grid_load=True,
+                )
+
+                # -----------------------------
+                # 🗑️ Handle Delete
+                # -----------------------------
+                selected = grid_response.get("selected_rows", [])
+
+                if selected:
+                    selected_id = selected[0]["ID"]
+
+                    if st.button("🗑️ Confirm Delete", type="secondary"):
+                        HistoryTracker.delete_application(selected_id)
+                        st.success("✅ Application deleted successfully")
+                        st.rerun()
+
+
+
+                # -------------------------
+                # 📥 Download CSV
+                # -------------------------
+                st.markdown("---")
+
+                csv = display_df.drop(columns=["ID"]).to_csv(index=False)
+
+                st.download_button(
+                    "📥 Download Application History (CSV)",
+                    csv,
+                    file_name=f"application_history_{datetime.now().strftime('%Y%m%d')}.csv",
+                    mime="text/csv",
+                )
+
+                # -------------------------
+                # 🗑️ Delete All History
+                # -------------------------
+                st.markdown("---")
+                st.markdown("### 🗑️ Manage History")
+
+                if "confirm_delete_all" not in st.session_state:
+                    st.session_state.confirm_delete_all = False
+
+                if not st.session_state.confirm_delete_all:
+                    if st.button("🗑️ Delete All History", type="secondary"):
+                        st.session_state.confirm_delete_all = True
+                        st.rerun()
+                else:
+                    st.warning(
+                        "⚠️ Are you sure you want to delete **all application history**?"
+                    )
+                    col1, col2 = st.columns(2)
+
+                    with col1:
+                        if st.button(
+                            "Yes, Delete All",
+                            type="primary",
+                            use_container_width=True,
+                        ):
+                            HistoryTracker.delete_all_history()
+                            st.session_state.confirm_delete_all = False
+                            st.success("✅ All application history deleted")
+                            st.rerun()
+
+                    with col2:
+                        if st.button("Cancel", use_container_width=True):
+                            st.session_state.confirm_delete_all = False
+                            st.rerun()
+
+            else:
+                st.info("📭 No application history to display")
+
         else:
             st.info("📭 No application history yet")
-            st.markdown("""
-            ### 🚀 Start Tracking Your Applications!
-            
-            Every time you generate materials, we automatically:
-            - ✅ Save the application details
-            - ✅ Track ATS scores
-            - ✅ Record processing times
-            - ✅ Build your analytics dashboard
-            
-            Go to **Generate Materials** to create your first application!
-            """)
+            st.markdown(
+                """
+                ### 🚀 Start Tracking Your Applications!
+
+                Every time you generate materials, we automatically:
+                - ✅ Save application details
+                - ✅ Track ATS scores
+                - ✅ Record processing times
+                - ✅ Build your analytics dashboard
+
+                Go to **Generate Materials** to create your first application!
+                """
+            )
+
     except Exception as e:
-        st.error("Error loading analytics database. It will be created on your first application.")
+        st.error(
+            "❌ Error loading analytics database. It will be created on your first application."
+        )
 
 # ============================================================================
 # TAB 6: ABOUT & HELP
@@ -919,7 +1024,7 @@ with tab6:
         - 📊 Application Analytics
         
         **Advanced Technology:**
-        - 🤖 Google Gemini AI
+        - 🤖 Groq AI
         - 🔗 LangChain Framework
         - 🧠 RAG (Retrieval-Augmented Generation)
         - 📈 Real-time ATS analysis
@@ -960,34 +1065,6 @@ with tab6:
     st.markdown("---")
     
     st.markdown("""
-    ### 🛠️ Technical Details
-    
-    **Architecture:**
-    - Multi-agent AI system with 7 specialized agents
-    - Modular, production-grade code structure
-    - Error handling and validation
-    - Cloud-deployed on Streamlit Cloud
-    
-    **Performance:**
-    - ⚡ Processing Time: < 30 seconds
-    - 🎯 ATS Compatibility: 90%+ average
-    - 📝 Materials Generated: 5+ per application
-    - 💾 Data Persistence: JSON-based storage
-    
-    **Tech Stack:**
-    - Python 3.11
-    - Google Gemini AI API
-    - Streamlit Framework
-    - LangChain (Optional)
-    - ChromaDB for RAG
-    - ReportLab for PDF export
-    - BeautifulSoup for web scraping
-    - Plotly for visualizations
-    
-    ---
-    
-    **Developed as a Capstone Project | 2025**
-    
     💡 **Tip:** For best results, provide detailed job descriptions and complete resumes!
     """)
 
@@ -998,7 +1075,7 @@ with tab6:
 st.markdown("---")
 st.markdown(
     '<div style="text-align:center;padding:2rem;color:#667eea;font-weight:500;">'
-    '🚀 AI Job Assistant PRO | Built with ❤️ using AI & Modern Web Tech'
+    '🚀 AI Job Assistant PRO | Built using AI & Modern Web Tech'
     '</div>',
     unsafe_allow_html=True
 )

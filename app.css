@@ -189,6 +189,33 @@ input:focus, textarea:focus, select:focus {
   background: #a8a8a8;
 }
 
+/* ================================
+   Compact Application History Table
+   ================================ */
+
+.compact-header {
+    font-weight: 600;
+    color: #9ca3af;
+    border-bottom: 2px solid #2a2a2a;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+}
+
+.compact-row {
+    padding: 0.35rem 0.5rem;
+    border-bottom: 1px solid #2a2a2a;
+    font-size: 0.9rem;
+}
+
+.compact-row:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.delete-btn button {
+    padding: 0.25rem 0.6rem !important;
+    border-radius: 6px !important;
+}
+
 /* ===============================
    MOBILE
 =============================== */
